@@ -12,8 +12,8 @@ source:
 build:
   noarch: python
   script:
-    - cp -R {{ RECIPE_DIR }}/LONG_DESCRIPTION.md {{ SRC_DIR }}/LONG_DESCRIPTION.md # [unix]
-    - echo f | xcopy /f /y /S %RECIPE_DIR%\LONG_DESCRIPTION.md %SRC_DIR%\LONG_DESCRIPTION.md # [win]
+    - cp -R {{ RECIPE_DIR }}/LONG_DESCRIPTION.md {{ SRC_DIR }}/LONG_DESCRIPTION.md  # [unix]
+    - echo f | xcopy /f /y /S %RECIPE_DIR%\LONG_DESCRIPTION.md %SRC_DIR%\LONG_DESCRIPTION.md  # [win]
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
