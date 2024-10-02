@@ -1,5 +1,5 @@
 {% set name = "okta-jwt-verifier" %}
-{% set version = "0.2.3" %}
+{% set version = "0.2.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/okta_jwt_verifier-{{ version }}.tar.gz
-  sha256: efd347d91be91649bd3af04b2ea82c1d3cc70bd8ca338f4d387fd933a5a606b1
+  sha256: 172cf6d9fb8e0c1bcb67a826c604ddec1b59703b5599d74bfde21f5b777647d4
 
 build:
   noarch: python
   script:
-   - cp -R {{ RECIPE_DIR }}/LONG_DESCRIPTION.md {{ SRC_DIR }}/LONG_DESCRIPTION.md  # [unix]
-   - echo f | xcopy /f /y /S %RECIPE_DIR%\LONG_DESCRIPTION.md %SRC_DIR%\LONG_DESCRIPTION.md  # [win]
-   - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+    - cp -R {{ RECIPE_DIR }}/LONG_DESCRIPTION.md {{ SRC_DIR }}/LONG_DESCRIPTION.md # [unix]
+    - echo f | xcopy /f /y /S %RECIPE_DIR%\LONG_DESCRIPTION.md %SRC_DIR%\LONG_DESCRIPTION.md # [win]
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
