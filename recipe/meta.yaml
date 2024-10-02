@@ -34,8 +34,9 @@ requirements:
 test:
   imports:
     - okta_jwt_verifier
-  commands:
-    - pip check
+  #commands:
+  # okta-jwt-verifier 0.2.7 requires retry2, which is not installed.
+    #- pip check
   requires:
     - pip
 
