@@ -12,21 +12,24 @@ source:
 build:
   noarch: python
   script:
-    - cp -R {{ RECIPE_DIR }}/LONG_DESCRIPTION.md {{ SRC_DIR }}/LONG_DESCRIPTION.md # [unix]
-    - echo f | xcopy /f /y /S %RECIPE_DIR%\LONG_DESCRIPTION.md %SRC_DIR%\LONG_DESCRIPTION.md # [win]
+    - cp -R {{ RECIPE_DIR }}/LONG_DESCRIPTION.md {{ SRC_DIR }}/LONG_DESCRIPTION.md  # [unix]
+    - echo f | xcopy /f /y /S %RECIPE_DIR%\LONG_DESCRIPTION.md %SRC_DIR%\LONG_DESCRIPTION.md  # [win]
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.8
     - pip
+    - poetry-core
   run:
-    - python >=3.6
-    - acachecontrol
-    - aiohttp
-    - python-jose
+    - python >=3.8
+    - acachecontrol >=0.3.5,<0.4.0
+    - pyjwt >=2.8.0,<3.0.0
     - retry
+    #- retry2 >=0.9.5,<0.10.0 # # Not Available
+    #- aiohttp # Not Needed
+    #- python-jose # Not Needed
 
 test:
   imports:
