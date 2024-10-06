@@ -26,17 +26,14 @@ requirements:
     - python >=3.8
     - acachecontrol >=0.3.5,<0.4.0
     - pyjwt >=2.8.0,<3.0.0
-    - retry
-    #- retry2 >=0.9.5,<0.10.0 # # Not Available
-    #- aiohttp # Not Needed
-    #- python-jose # Not Needed
+    - retry2 >=0.9.5,<0.10.0
 
 test:
   imports:
     - okta_jwt_verifier
-  #commands:
-  # okta-jwt-verifier 0.2.7 requires retry2, which is not installed.
-    #- pip check
+  commands:
+  okta-jwt-verifier 0.2.7 requires retry2, which is not installed.
+    - pip check
   requires:
     - pip
 
