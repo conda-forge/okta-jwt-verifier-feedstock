@@ -23,13 +23,12 @@ requirements:
     - pip
     - setuptools
   run:
-    - pyjwt >=2.8.0,<3.0.0
-    - retry2 >=0.9.5,<0.10.0
     - python >={{ python_min }}
+    - pyjwt >=2.8.0,<3.0.0
     - acachecontrol >=0.3.6,<0.4.0
-    - aiohttp
-    - python-jose
-    - retry
+    - retry2 >=0.9.5,<0.10.0
+    #- aiohttp
+    #- python-jose
 
 test:
   imports:
