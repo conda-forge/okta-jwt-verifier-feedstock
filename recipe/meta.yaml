@@ -1,5 +1,5 @@
 {% set name = "okta-jwt-verifier" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/okta_jwt_verifier-{{ version }}.tar.gz
-  sha256: 55659d490412261abb26a481c0cab7f23b514d25e8c9cd8483f18ebb511e4cea
+  sha256: 4fe6e4f4ffff6c03b6b63a7709b879bdaf57025ae1dcc06ea2f32dd4a07963df
 
 build:
   noarch: python
@@ -23,10 +23,11 @@ requirements:
     - pip
     - poetry-core
   run:
+    - requests
     - python >={{ python_min }}
     - pyjwt >=2.8.0,<3.0.0
     - acachecontrol >=0.3.6,<0.4.0
-    - retry  #2 >=0.9.5,<0.10.0
+    - retry  # upstream wants retry2 (a fork, not on conda-forge); retry is the original w/ the same `retry` import. TODO: switch to retry2 once packaged
 
 test:
   imports:
